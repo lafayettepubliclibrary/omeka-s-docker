@@ -5,7 +5,7 @@ services:
     image: mariadb:latest 
     restart: always
     networks:
-      - net              
+      - net
     volumes:
       - mariadb:/var/lib/mysql
     environment:
