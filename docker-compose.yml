@@ -42,3 +42,6 @@ services:
 volumes:
   mariadb:
   omeka:
+
+networks:
+  net:
