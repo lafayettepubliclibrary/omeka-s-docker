@@ -18,8 +18,8 @@ services:
       - mariadb
     image: phpmyadmin/phpmyadmin:latest
     restart: always
-    ports:
-      - "8080:80"
+ #  ports:
+ #    - "8080:80"
     links:
       - mariadb:db
 
@@ -29,12 +29,15 @@ services:
     image: lafayettepubliclibrary/omeka-s:3.1.1
     restart: always
 
-    ports:
-      - "88:80"
+#   ports:
+#     - "88:80"
     links:
       - mariadb:db
     volumes:
       - omeka:/var/www/html/volume
+    environment:
+      - VIRTUAL_HOST=example.lafayettepubliclibrary.org
+      - LETSENCRYPT_HOST=example.lafayettepubliclibrary.org
 volumes:
   mariadb:
   omeka:
