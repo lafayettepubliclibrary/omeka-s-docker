@@ -1,0 +1,45 @@
+version: "3.7"
+
+services:
+  mariadb:
+    image: mariadb:latest 
+    restart: always
+              
+    volumes:
+      - mariadb:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: blabla 
+      MYSQL_DATABASE: omeka
+      MYSQL_USER: omeka
+      MYSQL_PASSWORD: omeka
+
+  pma:
+    depends_on:
+      - mariadb
+    image: phpmyadmin/phpmyadmin:latest
+    restart: always
+    ports:
+      - "8080:80"
+    links:
+      - mariadb:db
+
+  omeka:
+    depends_on:
+      - mariadb
+    image: lpl/omeka-s:0.2
+    restart: always
+
+    ports:
+      - "88:80"
+    links:
+      - mariadb:db
+    volumes:
+      - omeka:/var/www/html/volume
+volumes:
+  mariadb:
+  omeka:
+
+networks:
+ default:
+   external: true
+   name: net
