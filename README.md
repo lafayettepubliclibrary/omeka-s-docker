@@ -1,6 +1,13 @@
 # Omeka-S in Docker containers
 
+Built by Adam Melancon, Manager of the Lafayette (Louisiana) Public Library System.
+
+http://www.lafayettepubliclibrary.org
+
 This is an updated build of an Omkea-S image from https://hub.docker.com/r/dodeeric/omeka-s
+
+## Source Repo
+https://github.com/lafayettepubliclibrary/omeka-s-docker
 
 ## Launch the containers
 
