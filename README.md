@@ -1,6 +1,6 @@
 # Omeka-S in Docker containers
 
-Built by Adam Melancon, Manager of the Lafayette (Louisiana) Public Library System.
+Built by Adam Melancon, IT Manager of the Lafayette (Louisiana) Public Library System.
 
 http://www.lafayettepubliclibrary.org
 
